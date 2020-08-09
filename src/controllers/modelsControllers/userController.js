@@ -46,7 +46,8 @@ const postUser = async (user) => {
 			response.gender = user.gender;
 			await response.save();
 		}
-		return response;
+		const formattedUser = await formatUserObject(response)
+		return formattedUser;
 	} catch (e) {
 		console.log('error ocurred in userController at postUser() ', e.message);
 		return {
@@ -132,12 +133,12 @@ const deleteUser = async (id) => {
 	}
 };
 
-/** 'formatUserObject' function thats formats the user object
+/** 'formatUserObject' function thats formats the user object to return it back without the password for security 
  *
  * @param {Object} user  object of user that holds the info of a user
  * @return {Object} returns new formatted user object
  */
-const formatUserObject = (user) => {
+const formatUserObject = async (user) => {
 	const userFormatted = {};
 	if (user.username) userFormatted.username = user.username;
 	if (user.email) userFormatted.email = user.email;
