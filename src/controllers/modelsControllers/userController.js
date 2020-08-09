@@ -46,7 +46,7 @@ const postUser = async (user) => {
 			response.gender = user.gender;
 			await response.save();
 		}
-		return { username: response.username, message: 'user was added' };
+		return response;
 	} catch (e) {
 		console.log('error ocurred in userController at postUser() ', e.message);
 		return {
@@ -131,8 +131,6 @@ const deleteUser = async (id) => {
 		return { message: ` something went wrong cannot delete the user with the id ${id}` };
 	}
 };
-
-
 
 /** 'formatUserObject' function thats formats the user object
  *
