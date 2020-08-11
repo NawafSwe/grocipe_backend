@@ -20,8 +20,8 @@ authenticationRouter.post('/login', function (req, res, next) {
 				return next(err);
 			}
 
-			const response =  await userController.formatUserObject(user),
-			;
+			const response = await userController.formatUserObject(user);
+
 			return res.json(response).status(200);
 		});
 	})(req, res, next);
