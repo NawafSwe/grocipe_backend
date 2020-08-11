@@ -20,12 +20,8 @@ authenticationRouter.post('/login', function (req, res, next) {
 				return next(err);
 			}
 
-			const response = {
-				message: `successfully logged in as ${user.username}`,
-				status: 200,
-				statusMessage: 'OK',
-				user: userController.formatUserObject(user),
-			};
+			const response =  await userController.formatUserObject(user),
+			;
 			return res.json(response).status(200);
 		});
 	})(req, res, next);
