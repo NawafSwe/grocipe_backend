@@ -1,6 +1,6 @@
 /* ----------------- importing files and models ---------------- */
 const User = require('../../models/user');
-const passport = require('passport');
+const helper = require('../../helpers/userHelpers');
 
 /* ----------------- FUNCTIONS ---------------- */
 
@@ -46,7 +46,7 @@ const postUser = async (user) => {
 			response.gender = user.gender;
 			await response.save();
 		}
-		const formattedUser = await formatUserObject(response);
+		const formattedUser = await helper.formatUserObject(response);
 		return formattedUser;
 	} catch (e) {
 		console.log('error ocurred in userController at postUser() ', e.message);
@@ -84,11 +84,15 @@ const putUser = async (id, user) => {
 				await User.findByIdAndUpdate(id, { age: value });
 			} else if (key === 'gender') {
 				await User.findByIdAndUpdate(id, { gender: value });
+			} else if (key === 'recipes') {
+				const fetchUser = await User.findById(id);
+				await fetchUser.recipes.push(value);
+				await fetchUser.save();
 			}
 		}
 		const response = await User.findById(id);
-		console.log(response);
-		return { username: response.username, message: 'user was updated' };
+		const result = await helper.formatUserObject(response);
+		return result;
 	} catch (e) {
 		console.log('error ocurred in userController at putUser() ', e.message);
 		return { message: ` something went wrong cannot update the user with the id ${id}` };
@@ -133,20 +137,4 @@ const deleteUser = async (id) => {
 	}
 };
 
-/** 'formatUserObject' function thats formats the user object to return it back without the password for security
- *
- * @param {Object} user  object of user that holds the info of a user
- * @return {Object} returns new formatted user object
- */
-const formatUserObject = async (user) => {
-	const userFormatted = {};
-	userFormatted.id = user.id;
-	if (user.username) userFormatted.username = user.username;
-	if (user.email) userFormatted.email = user.email;
-	if (user.age) userFormatted.age = user.age;
-	if (user.gender) userFormatted.gender = user.gender;
-
-	return userFormatted;
-};
-
-module.exports = { getUsers, postUser, putUser, deleteUser, getUserById, formatUserObject };
+module.exports = { getUsers, postUser, putUser, deleteUser, getUserById };

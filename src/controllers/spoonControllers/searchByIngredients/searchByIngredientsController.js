@@ -2,7 +2,7 @@
 const axios = require('axios'),
 	prepareRequest = require('./prepareRequest'),
 	transformer = require('./transformer'),
-	spoonHelper = require('../../helpers/spoonHelpers');
+	spoonHelper = require('../../../helpers/spoonHelpers');
 searchByIngredientsRequest = async (body) => {
 	try {
 		const request = prepareRequest(body);

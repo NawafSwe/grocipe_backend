@@ -3,7 +3,7 @@ this file is holding helpers functions to form custom requests from the server A
 from a response that returned by the server to get other useful responses */
 
 /*----------------------------- Requiring Packages -----------------------------*/
-const getRecipeInfoController = require('../spoonControllers/getRecipeInformation/getRecipeInformationController');
+const getRecipeInfoController = require('../controllers/spoonControllers/getRecipeInformation/getRecipeInformationController');
 
 /*----------------------------- Helper Functions -----------------------------*/
 

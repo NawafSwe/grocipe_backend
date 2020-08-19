@@ -37,7 +37,7 @@ const validate = (method) => {
 				/*  ----------- Schema Validation ----------- */
 				body(' ').custom((value, { req }) => {
 					//  first specifying the schemas of the request to stop any request happing if any;
-					const schemas = ['username', 'email', 'password', 'age', 'gender'];
+					const schemas = ['username', 'email', 'password', 'age', 'gender', 'recipes'];
 					if (validateSchema(schemas, req)) return true;
 				}),
 				/*  ----------- END OF SCHEMA VALIDATION ----------- */
@@ -54,13 +54,7 @@ const validate = (method) => {
 
 				/*  ----------- email VALIDATION ----------- */
 				body('email', 'email must exist and should be String').exists().isString(),
-				body('email', 'email cannot be empty').not().equals(''),
-				body('email', 'email cannot be empty').not().equals(' '),
-				body('email').custom((value, { req }) => {
-					if (value.indexOf(' ') > 0) throw new Error('email cannot have spaces');
-					else return true;
-				}),
-
+				body('email', 'Please enter valid email').exists().isEmail(),
 				/*  ----------- password VALIDATION ----------- */
 				body('password', 'password must be exists and and should be string').exists().isString(),
 				body('password.length', 'password cannot be empty').not().equals('0'),
@@ -78,6 +72,22 @@ const validate = (method) => {
 					.optional()
 					.not()
 					.equals('0'),
+
+				/*  ----------- Recipes VALIDATION ----------- */
+				body('recipes', 'recipe must be not empty').optional().isEmpty(),
+				body('recipe')
+					.optional()
+					.custom((value, { req }) => {
+						if (typeof value.title != 'string') {
+							throw new Error(`error the title of the recipe must be of type string`);
+						} else if (value.image) {
+							if (typeof value.image != 'string') {
+								throw new Error('image must be of type string');
+							}
+						} else {
+							return true;
+						}
+					}),
 			];
 		}
 		case 'putUser': {
@@ -88,7 +98,7 @@ const validate = (method) => {
 				/*  ----------- Schema Validation ----------- */
 				body(' ').custom((value, { req }) => {
 					//  first specifying the schemas of the request to stop any request happing if any;
-					const schemas = ['username', 'email', 'password', 'age', 'gender'];
+					const schemas = ['username', 'email', 'password', 'age', 'gender', 'recipes'];
 					if (validateSchema(schemas, req)) return true;
 				}),
 				/*  ----------- END OF SCHEMA VALIDATION ----------- */
@@ -106,14 +116,7 @@ const validate = (method) => {
 
 				/*  ----------- email VALIDATION ----------- */
 				body('email', 'email must exist and should be String').optional().isString(),
-				body('email', 'email cannot be empty').optional().not().equals(''),
-				body('email', 'email cannot be empty').optional().not().equals(' '),
-				body('email')
-					.optional()
-					.custom((value, { req }) => {
-						if (value.indexOf(' ') > 0) throw new Error('email cannot have spaces');
-						else return true;
-					}),
+				body('email', 'Please enter valid email').optional().isEmail(),
 
 				/*  ----------- password VALIDATION ----------- */
 				body('password', 'password must be exists and and should be string').optional().isString(),
@@ -134,6 +137,23 @@ const validate = (method) => {
 					.optional()
 					.not()
 					.equals('0'),
+
+				/*  ----------- Recipes VALIDATION ----------- */
+				body('recipes')
+					.optional()
+					.custom((value, { req }) => {
+						if (!value.title || value.length == '' || value.title == ' ') {
+							throw new Error('recipe must have title');
+						} else if (typeof value.title != 'string') {
+							throw new Error(`error the title of the recipe must be of type string`);
+						} else if (value.image) {
+							if (typeof value.image != 'string') {
+								throw new Error('image must be of type string');
+							}
+						} else {
+							return true;
+						}
+					}),
 			];
 		}
 		case 'deleteUser': {

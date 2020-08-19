@@ -7,6 +7,7 @@ const recipeSchema = mongoose.Schema({
 	healthScore: { type: Number },
 	unit: { type: String },
 	ingredients: [],
+	
 });
 
 /*---------------------------- creating the model in the DB ----------------------------*/

@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
 	password: { type: String, require: true },
 	age: { type: Number },
 	gender: { type: String },
+	recipes: [],
 });
 
 /*---------------------------- creating the model in the DB ----------------------------*/
