@@ -1,8 +1,8 @@
 const express = require('express');
 const authenticationRouter = express.Router();
 const passport = require('passport');
-const helpers = require('../helpers/spoonHelpers');
-const User = require('../models/user');
+const helpers = require('../helpers/userHelpers');
+
 
 /* ---------------------------- User Authentication routes  ---------------------------- */
 
