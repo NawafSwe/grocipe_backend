@@ -1,7 +1,8 @@
 const express = require('express');
 const authenticationRouter = express.Router();
 const passport = require('passport');
-const userController = require('../controllers/modelsControllers/userController');
+const helpers = require('../helpers/spoonHelpers');
+const User = require('../models/user');
 
 /* ---------------------------- User Authentication routes  ---------------------------- */
 
@@ -20,7 +21,7 @@ authenticationRouter.post('/login', function (req, res, next) {
 				return next(err);
 			}
 
-			const response = await userController.formatUserObject(user);
+			const response = await helpers.formatUserObject(user);
 
 			return res.json(response).status(200);
 		});
@@ -30,7 +31,8 @@ authenticationRouter.post('/login', function (req, res, next) {
 /* '/logout'  to log out user from the application */
 authenticationRouter.get('/logout', async (req, res) => {
 	try {
-		req.logOut();
+		const result = req.logOut();
+
 		const response = {
 			message: 'logged out successfully',
 			status: 200,
@@ -45,5 +47,7 @@ authenticationRouter.get('/logout', async (req, res) => {
 		res.json(response).status(400);
 	}
 });
+
+authenticationRouter.get('/seed', async (req, res) => {});
 
 module.exports = authenticationRouter;
