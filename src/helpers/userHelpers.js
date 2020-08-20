@@ -31,6 +31,11 @@ const formatUserObject = async (user) => {
 	return userFormatted;
 };
 
+/**
+ *
+ * @param {String} id of the user to associate it with a recipe
+ * @param {Object} recipe data to add it as a recipe ref in the db
+ */
 const postUserRecipe = async (id, recipe) => {
 	try {
 		const response = await User.findById(id);
