@@ -3,5 +3,4 @@ const delay = (t) => {
 		setTimeout(() => resolve(t), t);
 	});
 };
-
 module.exports = delay;

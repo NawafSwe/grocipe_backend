@@ -1,6 +1,7 @@
 /* ----------------- importing files and models ---------------- */
 const User = require('../../models/user');
 const helper = require('../../helpers/userHelpers');
+const Recipe = require('../../models/recipe');
 
 /* ----------------- FUNCTIONS ---------------- */
 
@@ -13,7 +14,7 @@ const helper = require('../../helpers/userHelpers');
 
 const getUsers = async () => {
 	try {
-		const response = await User.find({});
+		const response = await User.find({}).populate('recipes');
 		return response;
 	} catch (e) {
 		console.log('error ocurred in userController at getUsers() ', e.message);
@@ -85,12 +86,12 @@ const putUser = async (id, user) => {
 			} else if (key === 'gender') {
 				await User.findByIdAndUpdate(id, { gender: value });
 			} else if (key === 'recipes') {
-				const fetchUser = await User.findById(id);
-				await fetchUser.recipes.push(value);
-				await fetchUser.save();
+				const recipe = await value;
+				console.log('recipe is ', recipe);
+				await helper.postUserRecipe(id, recipe);
 			}
 		}
-		const response = await User.findById(id);
+		const response = await User.findById(id).populate('recipes');
 		const result = await helper.formatUserObject(response);
 		return result;
 	} catch (e) {
@@ -109,9 +110,8 @@ const putUser = async (id, user) => {
 
 const getUserById = async (id) => {
 	try {
-		const response = await User.findById(id);
+		const response = await User.findById(id).populate('recipes');
 
-		console.log('from controller', response);
 		return response;
 	} catch (e) {
 		console.log('error ocurred in userController at getUserById() ', e.message);
@@ -129,8 +129,13 @@ const getUserById = async (id) => {
 
 const deleteUser = async (id) => {
 	try {
-		const response = await User.findByIdAndDelete(id);
-		return { username: response.username, message: 'user was deleted' };
+		const response = await User.findByIdAndDelete(id).populate('recipes');
+		if (response.recipes) {
+			for (let recipe of response.recipes) {
+				await Recipe.findByIdAndDelete(recipe.id);
+			}
+		}
+		return response;
 	} catch (e) {
 		console.log('error ocurred in userController at deleteUser() ', e.message);
 		return { message: ` something went wrong cannot delete the user with the id ${id}` };

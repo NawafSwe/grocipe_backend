@@ -28,7 +28,7 @@ const validate = (method) => {
 					if (validateSchema(schemas, req)) return true;
 				}),
 				/*  ----------- END OF SCHEMA VALIDATION ----------- */
-
+				
 				/* ----------- cuisine Validation ----------- */
 				body('cuisine', 'cuisine must exists and be of type string').exists().isString(),
 				body('cuisine', 'cuisine cannot be an empty String').not().equals(''),

@@ -21,7 +21,7 @@ const express = require('express'),
 
 /* '/searchByIngredients', is POST ROUTE  where it post a request to search for Ingredients  */
 spoonRouter.post('/searchByIngredients', validate('searchByIngredients'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		res.send(err.mapped()).status(400);
 	} else {
@@ -32,7 +32,7 @@ spoonRouter.post('/searchByIngredients', validate('searchByIngredients'), async 
 
 /* '/searchByIngredients', is POST ROUTE  where it post a request to search for Ingredients  */
 spoonRouter.post('/searchByAutocomplete', validate('searchByAutocomplete'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) {
 		res.send(err.mapped()).status(400);
 	} else {
@@ -46,7 +46,7 @@ spoonRouter.post(
 	'/searchIngredientsById/:id',
 	validate('searchIngredientsById'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) {
 			res.send(err.mapped()).status(400);
 		} else {
@@ -62,7 +62,7 @@ spoonRouter.post(
 	'/searchByProductInformation/:id',
 	validate('searchByProductInformation'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) res.send(err.mapped()).status(400);
 		else {
 			const recipeId = req.params.id;
@@ -74,7 +74,7 @@ spoonRouter.post(
 
 /* '/parseIngredients' POST ROUTE where it parse Ingredients from text to json object */
 spoonRouter.post('/parseIngredients', validate('parseIngredients'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const result = await parseIngredientsRequest(req.body);
@@ -83,7 +83,7 @@ spoonRouter.post('/parseIngredients', validate('parseIngredients'), async (req, 
 });
 /* '/visualizeIngredients' POST ROUTE where it get the html contents of given Ingredients */
 spoonRouter.post('/visualizeIngredients', validate('visualizeIngredients'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		// we need an html content ----> response were returned with out convert it into json
@@ -94,7 +94,7 @@ spoonRouter.post('/visualizeIngredients', validate('visualizeIngredients'), asyn
 
 /* '/classifyCuisine' POST ROUTE where it Classify the recipe's cuisine. */
 spoonRouter.post('/classifyCuisine', validate('classifyCuisine'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const result = await classifyCuisineRequest(req.body);
@@ -109,7 +109,7 @@ spoonRouter.post(
 	'/classifyGroceryProduct',
 	validate('classifyGroceryProduct'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) res.send(err.mapped()).status(400);
 		else {
 			const result = await classifyGroceryProductRequest(req.body);
@@ -123,7 +123,7 @@ spoonRouter.post(
 	'/mapIngredientsGroceryProducts',
 	validate('mapIngredientsGroceryProducts'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) res.send(err.mapped()).status(400);
 		else {
 			const result = await mapIngredientsGroceryProductsRequest(req.body);
@@ -137,7 +137,7 @@ spoonRouter.post(
 	'/guessNutritionByDishName',
 	validate('guessNutritionByDishName'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) res.send(err.mapped()).status(400);
 		else {
 			const result = await guessNutritionByDishNameRequest(req.body);
@@ -152,7 +152,7 @@ spoonRouter.post(
 	'/getRecipeInformation/:id',
 	validate('getRecipeInformation'),
 	async (req, res) => {
-		var err = validationResult(req);
+		const err = validationResult(req);
 		if (!err.isEmpty()) res.send(err.mapped()).status(400);
 		else {
 			// creating json object of recipe to avoid passing two parameters in the getRecipeInformationRequest
@@ -164,7 +164,7 @@ spoonRouter.post(
 );
 
 spoonRouter.post('/getRandomRecipe', validate('getRandomRecipe'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const result = await getRandomRecipeRequest(req.body);

@@ -74,12 +74,13 @@ const validate = (method) => {
 					.equals('0'),
 
 				/*  ----------- Recipes VALIDATION ----------- */
-				body('recipes', 'recipe must be not empty').optional().isEmpty(),
-				body('recipe')
+				body('recipes')
 					.optional()
 					.custom((value, { req }) => {
-						if (typeof value.title != 'string') {
-							throw new Error(`error the title of the recipe must be of type string`);
+						if (!value.cuisine || value.cuisine == '' || value.cuisine == ' ') {
+							throw new Error('recipe must have cuisine');
+						} else if (typeof value.cuisine != 'string') {
+							throw new Error(`error the cuisine of the recipe must be of type string`);
 						} else if (value.image) {
 							if (typeof value.image != 'string') {
 								throw new Error('image must be of type string');
@@ -142,10 +143,10 @@ const validate = (method) => {
 				body('recipes')
 					.optional()
 					.custom((value, { req }) => {
-						if (!value.title || value.length == '' || value.title == ' ') {
-							throw new Error('recipe must have title');
-						} else if (typeof value.title != 'string') {
-							throw new Error(`error the title of the recipe must be of type string`);
+						if (!value.cuisine || value.cuisine == '' || value.cuisine == ' ') {
+							throw new Error('recipe must have cuisine');
+						} else if (typeof value.cuisine != 'string') {
+							throw new Error(`error the cuisine of the recipe must be of type string`);
 						} else if (value.image) {
 							if (typeof value.image != 'string') {
 								throw new Error('image must be of type string');

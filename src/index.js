@@ -18,9 +18,6 @@ const spoonRouter = require('./routes/spoonRouter'),
 	authenticationRouter = require('./routes/authenticationRouter'),
 	cors = require('cors');
 
-/* -------------- Authentication Packages ---------------------- */
-
-
 /* -------------- choosing Env ---------------------- */
 if (process.env.NODE_ENV === 'staging' || process.env.NODE_ENV === 'production') {
 	require('custom-env').env(process.env.NODE_ENV);
@@ -47,7 +44,7 @@ mongoose.connect(
 	(err, db) => {
 		//testing the connectivity of the DB
 		if (err) console.log('error to connect to the database', err);
-		else console.log('successfully connected to the database');
+		else console.log('successfully connected to the database', db.name);
 	}
 );
 

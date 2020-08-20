@@ -1,7 +1,8 @@
 /* ----------------------------- File Explanation  -----------------------------
 this file is holding helpers functions to form custom requests from the server API by getting benefit
 from a response that returned by the server to get other useful responses  */
-const userController = require('../controllers/modelsControllers/userController');
+const recipeController = require('../controllers/modelsControllers/recipeController');
+const User = require('../models/user');
 
 /** 'formatUserObject' function thats formats the user object to return it back without the password for security
  *
@@ -30,28 +31,18 @@ const formatUserObject = async (user) => {
 	return userFormatted;
 };
 
-const getUserRecipes = async (id) => {
-	let result = {};
-	try {
-		const response = await userController.getUserById(id);
-		if (response.recipes) result.recipes = response.recipes;
-
-		return result;
-	} catch (error) {
-		console.log(`error happened in the user helpers in getUserRecipes() error: ${error}`);
-	}
-};
-
 const postUserRecipe = async (id, recipe) => {
 	try {
-		const response = await userController.getUserById(id);
-		await response.recipes.push(recipe);
+		const response = await User.findById(id);
+		const createdRecipes = await recipeController.postRecipe(recipe);
+		await response.recipes.push(createdRecipes);
 		await response.save();
 
-		return response;
+		const fetchNewUserData = await User.findById(id);
+		return fetchNewUserData;
 	} catch (error) {
 		console.log(`error happened in the user helpers at postUserRecipe()  error: ${error.message}`);
 	}
 };
 
-module.exports = { getUserRecipes, formatUserObject };
+module.exports = { formatUserObject, postUserRecipe };

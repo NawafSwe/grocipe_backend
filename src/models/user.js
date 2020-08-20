@@ -9,11 +9,10 @@ const userSchema = mongoose.Schema({
 	password: { type: String, require: true },
 	age: { type: Number },
 	gender: { type: String },
-	recipes: [],
+	recipes: [{ type: mongoose.Types.ObjectId, ref: 'Recipe' }],
 });
 
 /*---------------------------- creating the model in the DB ----------------------------*/
 userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;

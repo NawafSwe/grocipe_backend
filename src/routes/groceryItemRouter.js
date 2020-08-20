@@ -12,7 +12,7 @@ const express = require('express'),
 /* '/' get route that gets all the grocery items from the database */
 
 groceryRouter.get('/', validate('getGroceryItems'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await groceryController.getGroceryItems();
@@ -22,7 +22,7 @@ groceryRouter.get('/', validate('getGroceryItems'), async (req, res) => {
 
 /* '/' post route that posts new grocery item to the database */
 groceryRouter.post('/', validate('postGroceryItem'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await groceryController.postGroceryItem(req.body);
@@ -32,7 +32,7 @@ groceryRouter.post('/', validate('postGroceryItem'), async (req, res) => {
 
 /* '/:id' get route that get grocery by id  from the database */
 groceryRouter.get('/:id', validate('getGroceryItemById'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await groceryController.getGroceryItemById(req.params.id);
@@ -42,7 +42,7 @@ groceryRouter.get('/:id', validate('getGroceryItemById'), async (req, res) => {
 
 /* '/:id' delete route that deletes grocery by id  from the database */
 groceryRouter.delete('/:id', validate('deleteGroceryItem'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await groceryController.deleteGroceryItem(req.params.id);
@@ -53,7 +53,7 @@ groceryRouter.delete('/:id', validate('deleteGroceryItem'), async (req, res) => 
 /* '/:id put route that update a grocery item from the database by its id */
 
 groceryRouter.put('/:id', validate('putGroceryItem'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await groceryController.putGroceryItem(req.params.id, req.body);

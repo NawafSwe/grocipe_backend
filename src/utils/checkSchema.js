@@ -14,7 +14,6 @@
  * @returns {Error} if there is an error
  *
  */
-
 function validateSchema(schemas, request) {
 	//the purpose of the unRequiredSchemas is to add any key from the request body inside it;
 	let unRequiredSchemas = [];

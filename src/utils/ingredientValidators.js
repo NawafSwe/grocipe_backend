@@ -230,7 +230,6 @@ const validate = (method) => {
 					.optional()
 					.not()
 					.equals('0'),
-
 				body('metaInformation')
 					.optional()
 					.custom((value, { req }) => {
@@ -246,5 +245,4 @@ const validate = (method) => {
 		}
 	}
 };
-
 module.exports = validate;

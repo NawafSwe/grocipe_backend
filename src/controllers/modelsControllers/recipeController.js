@@ -34,7 +34,6 @@ const getRecipeById = async (id) => {
 		return { message: `cannot get the recipe with id ${id}` };
 	}
 };
-
 /**
  * 'postRecipe' function that posts a new recipe to the database
  * @param {Object} recipe where is the information of a recipe
@@ -50,7 +49,6 @@ const postRecipe = async (recipe) => {
 		console.log(`something went wrong at postRecipe() please try again ${e.message}`);
 	}
 };
-
 /**
  * 'putRecipe' function where it updates a specific recipe from the database by id
  * @param {String} id where it is the id of the recipe that will be updated from the database

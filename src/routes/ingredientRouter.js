@@ -11,7 +11,7 @@ const express = require('express'),
 
 /* '/' get request for getting all the ingredients from the database */
 ingredientRouter.get('/', validate('getIngredients'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await ingredientController.getIngredients();
@@ -21,7 +21,7 @@ ingredientRouter.get('/', validate('getIngredients'), async (req, res) => {
 
 /* '/:id' get request for getting one ingredient from the database */
 ingredientRouter.get('/:id', validate('getIngredientById'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await ingredientController.getIngredientById(req.params.id);
@@ -30,7 +30,7 @@ ingredientRouter.get('/:id', validate('getIngredientById'), async (req, res) => 
 });
 /* '/' post request for posting new ingredient in the database */
 ingredientRouter.post('/', validate('postIngredient'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await ingredientController.postIngredient(req.body);
@@ -40,7 +40,7 @@ ingredientRouter.post('/', validate('postIngredient'), async (req, res) => {
 
 /* '/:id' delete request for deleting one ingredient from the database */
 ingredientRouter.delete('/:id', validate('deleteIngredient'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await ingredientController.deleteIngredient(req.params.id);
@@ -50,7 +50,7 @@ ingredientRouter.delete('/:id', validate('deleteIngredient'), async (req, res) =
 
 /* '/:id' put request for updating one ingredient from the database */
 ingredientRouter.put('/:id', validate('putIngredient'), async (req, res) => {
-	var err = validationResult(req);
+	const err = validationResult(req);
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const response = await ingredientController.putIngredient(req.params.id, req.body);
