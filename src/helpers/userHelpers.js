@@ -11,21 +11,23 @@ const User = require('../models/user');
  */
 const formatUserObject = async (user) => {
 	const userFormatted = {};
-	userFormatted.id = user.id;
+	const fetchUser = await User.findById(user.id);
+	
+	userFormatted.id = fetchUser.id;
 	if (user.username) {
-		userFormatted.username = user.username;
+		userFormatted.username = fetchUser.username;
 	}
 	if (user.email) {
-		userFormatted.email = user.email;
+		userFormatted.email = fetchUser.email;
 	}
 	if (user.age) {
-		userFormatted.age = user.age;
+		userFormatted.age = fetchUser.age;
 	}
 	if (user.gender) {
-		userFormatted.gender = user.gender;
+		userFormatted.gender = fetchUser.gender;
 	}
 	if (user.recipes) {
-		userFormatted.recipes = user.recipes;
+		userFormatted.recipes = fetchUser.recipes;
 	}
 
 	return userFormatted;
