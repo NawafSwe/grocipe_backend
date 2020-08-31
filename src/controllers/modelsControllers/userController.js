@@ -144,9 +144,9 @@ const deleteUser = async (id) => {
 
 const deleteUserRecipe = async (userId, recId) => {
 	try {
-		const response = await (await User.findById(userId)).populated('recipes');
+		const response = await User.findById(userId).populate('recipes');
 
-		for (let i = 0; i < (await response.recipes.length); i++) {
+		for (let i = 0; i < response.recipes.length; i++) {
 			if (response.recipes[i].id == recId) {
 				await Recipe.findByIdAndRemove(recId);
 				await response.recipes.splice(i, 1);
