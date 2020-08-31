@@ -10,27 +10,29 @@ const User = require('../models/user');
  * @return {Object} returns new formatted user object
  */
 const formatUserObject = async (user) => {
-	const userFormatted = {};
-	const fetchUser = await (await User.findById(user.id)).populated('recipes');
+	try {
+		const userFormatted = {};
 
-	userFormatted.id = fetchUser.id;
-	if (user.username) {
-		userFormatted.username = fetchUser.username;
+		userFormatted.id = user.id;
+		if (user.username) {
+			userFormatted.username = user.username;
+		}
+		if (user.email) {
+			userFormatted.email = user.email;
+		}
+		if (user.age) {
+			userFormatted.age = user.age;
+		}
+		if (user.gender) {
+			userFormatted.gender = user.gender;
+		}
+		if (user.recipes) {
+			userFormatted.recipes = user.recipes;
+		}
+		return userFormatted;
+	} catch (e) {
+		console.log(`error happened while formatting user object ${e}`);
 	}
-	if (user.email) {
-		userFormatted.email = fetchUser.email;
-	}
-	if (user.age) {
-		userFormatted.age = fetchUser.age;
-	}
-	if (user.gender) {
-		userFormatted.gender = fetchUser.gender;
-	}
-	if (user.recipes) {
-		userFormatted.recipes = fetchUser.recipes;
-	}
-
-	return userFormatted;
 };
 
 /**

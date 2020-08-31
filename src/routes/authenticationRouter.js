@@ -21,7 +21,6 @@ authenticationRouter.post('/login', function (req, res, next) {
 			if (err) {
 				return next(err);
 			}
-			
 			const response = await helpers.formatUserObject(user);
 
 			return res.json(response).status(200);
