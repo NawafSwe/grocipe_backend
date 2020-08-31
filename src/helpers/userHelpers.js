@@ -11,8 +11,8 @@ const User = require('../models/user');
  */
 const formatUserObject = async (user) => {
 	const userFormatted = {};
-	const fetchUser = await User.findById(user.id);
-	
+	const fetchUser = await (await User.findById(user.id)).populated('recipes');
+
 	userFormatted.id = fetchUser.id;
 	if (user.username) {
 		userFormatted.username = fetchUser.username;
