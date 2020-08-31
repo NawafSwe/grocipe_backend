@@ -3,6 +3,7 @@ const authenticationRouter = express.Router();
 const passport = require('passport');
 const helpers = require('../helpers/userHelpers');
 const User = require('../models/user');
+const Recipe = require('../models/recipe');
 
 /* ---------------------------- User Authentication routes  ---------------------------- */
 
@@ -49,6 +50,7 @@ authenticationRouter.get('/logout', async (req, res) => {
 });
 authenticationRouter.get('/seed', async (req, res) => {
 	await User.deleteMany({});
+	await Recipe.deleteMany({});
 	res.send('done');
 });
 
