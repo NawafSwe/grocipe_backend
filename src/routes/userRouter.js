@@ -57,4 +57,21 @@ userRouter.delete('/:id', validate('deleteUser'), async (req, res) => {
 		res.json(response).status(200);
 	}
 });
+
+//User Recipes 
+userRouter.get('/:id/recipes/', async (req, res) => {
+
+});
+userRouter.get('/:id/recipes/:recId', async (req, res) => {
+
+});
+userRouter.post('/:id/recipes/', async (req, res) => {
+
+});
+userRouter.put('/:id/recipes/:recId', async (req, res) => {
+
+});
+userRouter.delete('/:id/recipes/:recId', async (req, res) => {
+	
+});
 module.exports = userRouter;
