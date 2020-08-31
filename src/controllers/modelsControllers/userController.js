@@ -142,4 +142,21 @@ const deleteUser = async (id) => {
 	}
 };
 
-module.exports = { getUsers, postUser, putUser, deleteUser, getUserById };
+const deleteUserRecipe = async (userId, recId) => {
+	try {
+		const response = await User.findById(userId);
+
+		for (let i = 0; i < (await response.recipes.length); i++) {
+			if (response.recipes[i] == recId) {
+				await Recipe.findByIdAndRemove(recId);
+				await response.recipes.splice(i, 1);
+				await response.save();
+			}
+		}
+		return response;
+	} catch (e) {
+		console.log(`error happened while deleting the user recipe ${e}`);
+	}
+};
+
+module.exports = { getUsers, postUser, putUser, deleteUser, getUserById, deleteUserRecipe };

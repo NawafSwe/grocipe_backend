@@ -58,20 +58,17 @@ userRouter.delete('/:id', validate('deleteUser'), async (req, res) => {
 	}
 });
 
-//User Recipes 
-userRouter.get('/:id/recipes/', async (req, res) => {
+//User Recipes
+userRouter.get('/:id/recipes/', async (req, res) => {});
+userRouter.get('/:id/recipes/:recId', async (req, res) => {});
+userRouter.post('/:id/recipes/', async (req, res) => {});
+userRouter.put('/:id/recipes/:recId', async (req, res) => {});
 
-});
-userRouter.get('/:id/recipes/:recId', async (req, res) => {
-
-});
-userRouter.post('/:id/recipes/', async (req, res) => {
-
-});
-userRouter.put('/:id/recipes/:recId', async (req, res) => {
-
-});
 userRouter.delete('/:id/recipes/:recId', async (req, res) => {
-	
+	const userId = req.params.id;
+	const recId = req.params.recId;
+
+	const response = await userController.deleteUserRecipe(userId, recId);
+	res.send(response).status(200);
 });
 module.exports = userRouter;
