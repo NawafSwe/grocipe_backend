@@ -9,6 +9,7 @@ const recipeSchema = mongoose.Schema({
 	ingredients: [],
 	spoonId: { type: Number },
 	imageUrl: { type: String },
+	missedIngredients: [{ type: String }],
 });
 /*---------------------------- creating the model in the DB ----------------------------*/
 const Recipe = mongoose.model('Recipe', recipeSchema);
