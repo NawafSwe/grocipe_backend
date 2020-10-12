@@ -6,6 +6,7 @@ const Recipe = require('../../models/recipe');
 /* ----------------- FUNCTIONS ---------------- */
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name getUsers
@@ -25,6 +26,7 @@ const getUsers = async () => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name postUser
@@ -63,6 +65,7 @@ const postUser = async (user) => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name putUser
@@ -108,6 +111,7 @@ const putUser = async (id, user) => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name getUserById
@@ -130,6 +134,7 @@ const getUserById = async (id) => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @name deleteUser
  * @param {String} id it is the id of the user to be deleted
@@ -153,7 +158,7 @@ const deleteUser = async (id) => {
 	}
 };
 /** @author Nawaf Alsharqi
- * @export 
+ * @export
  * @async
  * @function
  * @name deleteUserRecipe.
@@ -179,7 +184,6 @@ const deleteUserRecipe = async (userId, recId) => {
 	}
 };
 /**
- *
  * @type {{putUser: (function(String, Object): Error),
  * getUserById: (function(String): Error), postUser: (function(Object): Error),
  * deleteUserRecipe: (function(string, string): Recipes), getUsers: (function(): Error),
