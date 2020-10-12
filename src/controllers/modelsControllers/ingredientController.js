@@ -9,7 +9,7 @@ const Ingredient = require('../../models/ingredient');
  * @name getIngredients
  * @return {list} list of Ingredients objects from the data base if there is no error
  * @return {Error} returns an error message if there is an error
- * @description gets all the ingredients from the database
+ * @description gets all the ingredients from the database.
  */
 
 const getIngredients = async () => {
