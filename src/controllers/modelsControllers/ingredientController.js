@@ -23,6 +23,7 @@ const getIngredients = async () => {
 };
 
 /**
+ * 
  * 'postIngredient' function it post a new ingredient to the database.
  * @param {Object} ingredient  where it is an object of type ingredient.
  * @return {Object} it returns the object that was added to the database, if there is no error
