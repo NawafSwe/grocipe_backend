@@ -3,10 +3,13 @@ const Ingredient = require('../../models/ingredient');
 
 /* ----------------- FUNCTIONS ---------------- */
 
-/**
- * 'getIngredients' function has no params ,where it gets all the ingredients from the database.
+/** @author Nawaf Alsharqi
+ * @async
+ * @function
+ * @name getIngredients
  * @return {list} list of Ingredients objects from the data base if there is no error
  * @return {Error} returns an error message if there is an error
+ * @description gets all the ingredients from the database
  */
 
 const getIngredients = async () => {
@@ -90,5 +93,5 @@ module.exports = {
 	postIngredient,
 	getIngredientById,
 	deleteIngredient,
-	putIngredient,
+	putIngredient
 };
