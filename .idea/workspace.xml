@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/spoonValidators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/spoonValidators.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1hXPd7yEAJA9wrA2dclW4M9YlnH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.splitter.proportion" value="0.40521565" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="" />
+      <created>1600154549132</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600154549132</updated>
+      <workItem from="1600154551236" duration="103000" />
+      <workItem from="1600164930772" duration="15000" />
+      <workItem from="1600216470601" duration="17000" />
+      <workItem from="1600216509672" duration="403000" />
+      <workItem from="1600350855888" duration="25000" />
+      <workItem from="1600350890608" duration="1217000" />
+      <workItem from="1602510165978" duration="658000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600216725494">
+      <screen x="0" y="23" width="1440" height="795" />
+    </state>
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.795@0.23.1440.795" timestamp="1600216725494" />
+    <state x="221" y="23" key="SettingsEditor" timestamp="1600216712104">
+      <screen x="0" y="23" width="1440" height="795" />
+    </state>
+    <state x="221" y="23" key="SettingsEditor/0.23.1440.795@0.23.1440.795" timestamp="1600216712104" />
+  </component>
+</project>
