@@ -5,6 +5,7 @@ const IngredientController = require('./ingredientController');
 /* ----------------- FUNCTIONS ---------------- */
 
 /** @author Nawaf AlSharqi
+ * @export
  * @async
  * @function
  * @name getAllRecipes
@@ -22,6 +23,7 @@ const getAllRecipes = async () => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name getRecipeById
@@ -41,6 +43,7 @@ const getRecipeById = async (id) => {
 	}
 };
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function postRecipe
  * @param {Object} recipe where is the information of a recipe
@@ -58,6 +61,7 @@ const postRecipe = async (recipe) => {
 	}
 };
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name putRecipe
@@ -78,6 +82,7 @@ const putRecipe = async (id, recipe) => {
 };
 
 /** @author Nawaf Alsharqi
+ * @export
  * @async
  * @function
  * @name deleteRecipe
@@ -96,4 +101,12 @@ const deleteRecipe = async (id) => {
 	}
 };
 
+/**
+ *
+ * @type {{getRecipeById: (function(String): Error),
+ * getAllRecipes: (function(): Error),
+ * putRecipe: (function(String, Object): Error),
+ * deleteRecipe: (function(String): Error),
+ * postRecipe: (function(Object): Error)}}
+ */
 module.exports = { getAllRecipes, getRecipeById, postRecipe, putRecipe, deleteRecipe };
