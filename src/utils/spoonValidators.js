@@ -448,5 +448,4 @@ const validate = (method) => {
 		}
 	}
 };
-
 module.exports = validate;

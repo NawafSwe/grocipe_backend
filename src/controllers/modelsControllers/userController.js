@@ -5,13 +5,15 @@ const Recipe = require('../../models/recipe');
 
 /* ----------------- FUNCTIONS ---------------- */
 
-/**
- * this function 'getUsers' is gets all the users from the database, it has no params.
+/** @author Nawaf Alsharqi
+ * @async
+ * @function
+ * @name getUsers
  * @return {list} it returns list of Users objects from the database if there is no error.
  * @return {Error} it returns an error message if there is an error.
+ * @description gets all the users from the database, it has no params.
  *
  */
-
 const getUsers = async () => {
 	try {
 		const response = await User.find({}).populate('recipes');
@@ -22,11 +24,14 @@ const getUsers = async () => {
 	}
 };
 
-/**
- * this function 'postUser' is to add a user to the database.
+/** @author Nawaf Alsharqi
+ * @async
+ * @function
+ * @name postUser
  * @param {Object}   user it is an Object of type user.
  * @return {Object} it returns the user that was added if there is no error.
  * @return {Error} it returns an error if there is an error.
+ * @description add a user to the database.
  *
  */
 
@@ -52,20 +57,22 @@ const postUser = async (user) => {
 	} catch (e) {
 		console.log('error ocurred in userController at postUser() ', e.message);
 		return {
-			message: `cannot post ${user.username} or ${user.email} it is already exists please pick another`,
+			message: `cannot post ${user.username} or ${user.email} it is already exists please pick another`
 		};
 	}
 };
 
-/**
- * this function 'putUser' is to update a user information from the database.
+/** @author Nawaf Alsharqi
+ * @async
+ * @function
+ * @name putUser
  * @param {String} id it is the id of the user to be updated
  * @param {Object} user the object is of type User to take the information.
  * @return {Object} it returns the user that was updated if there is no error.
  * @return {Error} it returns an error if there is an error.
+ * @description update a user information from the database.
  *
  */
-
 const putUser = async (id, user) => {
 	try {
 		/* 
@@ -100,11 +107,14 @@ const putUser = async (id, user) => {
 	}
 };
 
-/**
- * this function 'getUserById' is to get a user information from the database.
+/** @author Nawaf Alsharqi
+ * @async
+ * @function
+ * @name getUserById
  * @param {String} id it is the id of the user to be updated
  * @return {Object} it returns the user that was updated if there is no error.
  * @return {Error} it returns an error if there is an error.
+ * @description get a user information from the database.
  *
  */
 
@@ -119,14 +129,15 @@ const getUserById = async (id) => {
 	}
 };
 
-/**
- * this function 'deleteUser' is to delete a user information from the database.
+/** @author Nawaf Alsharqi
+ * @async
+ * @name deleteUser
  * @param {String} id it is the id of the user to be deleted
  * @return {Object} it returns the user that was deleted if there is no error.
  * @return {Error} it returns an error if there is an error.
+ * @description  delete a user information from the database.
  *
  */
-
 const deleteUser = async (id) => {
 	try {
 		const response = await User.findByIdAndDelete(id).populate('recipes');
@@ -141,7 +152,16 @@ const deleteUser = async (id) => {
 		return { message: ` something went wrong cannot delete the user with the id ${id}` };
 	}
 };
-
+/** @author Nawaf Alsharqi
+ * @export 
+ * @async
+ * @function
+ * @name deleteUserRecipe.
+ * @param {string} userId.
+ * @param {string} recId.
+ * @return {Recipes} returns user info with a recipes updated.
+ * @description delete user reciep from database.
+ */
 const deleteUserRecipe = async (userId, recId) => {
 	try {
 		const response = await User.findById(userId).populate('recipes');
@@ -158,5 +178,11 @@ const deleteUserRecipe = async (userId, recId) => {
 		console.log(`error happened while deleting the user recipe ${e}`);
 	}
 };
-
+/**
+ *
+ * @type {{putUser: (function(String, Object): Error),
+ * getUserById: (function(String): Error), postUser: (function(Object): Error),
+ * deleteUserRecipe: (function(string, string): Recipes), getUsers: (function(): Error),
+ * deleteUser: (function(String): Error)}}
+ */
 module.exports = { getUsers, postUser, putUser, deleteUser, getUserById, deleteUserRecipe };
