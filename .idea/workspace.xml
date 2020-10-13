@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/checkSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/checkSchema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/groceryItemCotroller.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/utils/checkSchema.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1hXPd7yEAJA9wrA2dclW4M9YlnH" />
   <component name="ProjectViewState">
@@ -51,6 +53,7 @@
       <workItem from="1600350855888" duration="25000" />
       <workItem from="1600350890608" duration="1217000" />
       <workItem from="1602510165978" duration="3422000" />
+      <workItem from="1602566773243" duration="477000" />
     </task>
     <servers />
   </component>
