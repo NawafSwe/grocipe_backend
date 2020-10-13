@@ -14,5 +14,4 @@ const getRecipeInformationRequest = async (recipe) => {
 		console.log('error occurred in spoon getRecipeInformation controller', e);
 	}
 };
-
 module.exports = getRecipeInformationRequest;
