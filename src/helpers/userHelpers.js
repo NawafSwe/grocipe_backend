@@ -4,10 +4,13 @@ from a response that returned by the server to get other useful responses  */
 const recipeController = require('../controllers/modelsControllers/recipeController');
 const User = require('../models/user');
 
-/** 'formatUserObject' function thats formats the user object to return it back without the password for security
- *
- * @param {Object} user  object of user that holds the info of a user
- * @return {Object} returns new formatted user object
+/** @author Nawaf Alsharqi.
+ * @async
+ * @function
+ * @name formatUserObject.
+ * @param {Object} user  object of user that holds the info of a user.
+ * @return {Object} returns new formatted user object.
+ * @description formats the user object to return it back without the password for security.
  */
 const formatUserObject = async (user) => {
 	try {
