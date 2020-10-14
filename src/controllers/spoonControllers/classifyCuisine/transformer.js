@@ -1,8 +1,16 @@
-const transformer = (result) => {
+/** @author Nawaf ALhsarqi.
+ * @async
+ * @function
+ * @name transformer
+ * @param {Promise<Response>} result.
+ * @returns {Promise<Object>} cleaned data of type js object.
+ * @throws {Error} error message if there is an error. 
+ * @description transform data and make it more cleaner in a specific order.
+ */
+const transformer = async (result) => {
 	try {
 	} catch (e) {
 		console.log('error occurred in spoon classifyCuisine transformer', e);
 	}
 };
-
 module.exports = transformer;
