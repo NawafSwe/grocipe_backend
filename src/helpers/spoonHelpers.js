@@ -7,12 +7,14 @@ const getRecipeInfoController = require('../controllers/spoonControllers/getReci
 
 /*----------------------------- Helper Functions -----------------------------*/
 
-/** 'getRecipeInfoByIds' helper function that allows us to get benefit from the response returned from the 'searchByIngredients' controller
- * by taking the recipe id from the response then do another request to the endpoint 'getRecipeInformation' to get the recipe information
- *
+/** @author Nawaf Alsharqi
+ * @function
+ * @name getRecipeInfoByIds
  * @param {Object} id is the id of particular recipe
  * @return {Object} returns Object of new response that came from the endpoint 'getRecipeInformationByID'
  * @return {Object} return a message if the body does not exist
+ * @description  allows us to get benefit from the response returned from the 'searchByIngredients' controller
+ * by taking the recipe id from the response then do another request to the endpoint 'getRecipeInformation' to get the recipe information
  */
 
 const getRecipeInfoById = async (id) => {
