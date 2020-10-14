@@ -1,6 +1,5 @@
 /*---------------------------- importing packages ----------------------------*/
 const mongoose = require('mongoose');
-
 /*---------------------------- creating schema ----------------------------*/
 const ingredientSchema = mongoose.Schema({
 	name: { type: String, require: true },
@@ -12,8 +11,6 @@ const ingredientSchema = mongoose.Schema({
 	shortUnitName: { type: String },
 	metaInformation: [],
 });
-
 /*---------------------------- creating the model in the DB ----------------------------*/
 const Ingredient = mongoose.model('Ingredient', ingredientSchema);
-
 module.exports = Ingredient;

@@ -1,15 +1,19 @@
 /*--------------- implementing the end point for spoon api ---------------*/
 
-/* Classify Cuisine endpoint */
-
-/* the final request from must be like this  
-title=Pork roast with green beans
-ingredientList=3 oz
-pork shoulder
-
-it should follow the order where title must comes first;
-                  
-*/
+/** @author Nawaf Alsharqi.
+ * @async
+ * @function
+ * @name prepareRequest.
+ * @param {object} body contains data.
+ * @return {String} formatted url for the end point.
+ * @throws {error} throws an error if there is an error.
+ * @description  Classify Cuisine endpoint
+ *  the final request from must be like this  
+ *	title=Pork roast with green beans
+ *	ingredientList=3 oz
+ *	pork shoulder
+ *  it should follow the order where title must comes first.
+ */
 
 const prepareRequest = (body) => {
 	try {
