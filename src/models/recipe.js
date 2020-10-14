@@ -1,6 +1,5 @@
 /*---------------------------- importing packages ----------------------------*/
 const mongoose = require('mongoose');
-
 /*---------------------------- creating schema ----------------------------*/
 const recipeSchema = mongoose.Schema({
 	cuisine: { type: String, require: true },
