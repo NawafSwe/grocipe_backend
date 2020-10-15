@@ -1,7 +1,14 @@
 /*--------------- implementing the end point for spoon api ---------------*/
-/* Get Random Recipes endpoint */
-
-const prepareRequest = (body) => {
+/** @author Nawaf Alsharqi.
+ * @async
+ * @function
+ * @name prepareRequest.
+ * @param {Object} body contains the data 
+ * @returns {String} formatted url for the end point
+ * @throws {Error} throws an error if there is an error. 
+ * @description formatting a url for the end point Random Recipes endpoint.
+ */
+const prepareRequest = async (body) => {
 	try {
 		const spoonHost = 'https://api.spoonacular.com/recipes/random',
 			spoonKey = process.env.API_KEY_SPOON || '';
