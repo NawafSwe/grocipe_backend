@@ -4,7 +4,6 @@ const express = require('express'),
 	userRouter = express.Router(),
 	userController = require('../controllers/modelsControllers/userController'),
 	validate = require('../utils/userValidators'),
-	passport = require('passport'),
 	{ validationResult } = require('express-validator/check');
 /* ----------------- Routes ---------------- */
 /*          VALIDATION BE AS A MIDDLE WARE              */

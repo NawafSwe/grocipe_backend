@@ -1,6 +1,12 @@
 /* eslint-disable indent */
 const { body, param } = require('express-validator/check');
-
+/** @author Nawaf Alsharqi. 
+ * @function
+ * @name validate
+ * @param {String} method name of the case to determine which validation we go with.
+ * @throws {Error} throws an error if there is an error.
+ * @description validate request before miss with the database.
+ */
 const validate = (method) => {
 	switch (method) {
 		case 'ingredients': {
