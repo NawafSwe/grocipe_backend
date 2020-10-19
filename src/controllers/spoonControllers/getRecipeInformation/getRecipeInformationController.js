@@ -2,7 +2,10 @@
 const axios = require('axios'),
 	prepareRequest = require('./prepareRequest'),
 	transformer = require('./transformer');
-
+/**
+ * 
+ * @param {*} recipe 
+ */
 const getRecipeInformationRequest = async (recipe) => {
 	try {
 		const request = prepareRequest(recipe);
