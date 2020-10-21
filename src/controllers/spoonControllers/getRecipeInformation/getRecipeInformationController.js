@@ -4,7 +4,8 @@ const axios = require('axios'),
 	transformer = require('./transformer');
 /**
  * 
- * @param {*} recipe 
+ * @param {Object} recipe data
+ * @return {Response<Promise>} data response from tha api 
  */
 const getRecipeInformationRequest = async (recipe) => {
 	try {
