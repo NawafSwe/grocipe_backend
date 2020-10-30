@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/prepareRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/prepareRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/guessNutritionByDishNameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/guessNutritionByDishNameController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/transformer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/mapIngredientsGroceryProducts/prepareRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/mapIngredientsGroceryProducts/prepareRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/mapIngredientsGroceryProducts/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/mapIngredientsGroceryProducts/transformer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/parseIngredients/parseIngredientsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/parseIngredients/parseIngredientsController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
       <workItem from="1603606639011" duration="23000" />
       <workItem from="1603640967137" duration="93000" />
       <workItem from="1603698307756" duration="9000" />
-      <workItem from="1604097510188" duration="709000" />
+      <workItem from="1604097510188" duration="1056000" />
     </task>
     <servers />
   </component>

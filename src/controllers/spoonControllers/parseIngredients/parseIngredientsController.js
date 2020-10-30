@@ -2,7 +2,12 @@
 const axios = require('axios'),
 	prepareRequest = require('./prepareRequest'),
 	transformer = require('./transformer');
-
+/**
+ *
+ * @param {Object} body contains data for the endpoint
+ * @returns {Promise<Response>}
+ * @throws {Error} it may throws an error during the process.
+ */
 const parseIngredientsRequest = async (body) => {
 	try {
 		const request = prepareRequest(body);

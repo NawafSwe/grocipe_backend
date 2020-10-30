@@ -1,12 +1,11 @@
- 
- /** @author Nawaf ALhsarqi.
+/** @author Nawaf ALhsarqi.
  * @async
  * @function
  * @name transformer
  * @param {Promise<Response>} result received result from api.
  * @returns {Promise<Object>} cleaned data of type js object.
  * @throws {Error} throws an error if there is an external error.
- * @description cleans the response and getting rid of unnecessarily information. 
+ * @description cleans the response and getting rid of unnecessarily information.
  */
 const transformer = (result) => {
 	/*------------------ filtering Result before sending ------------------ */
