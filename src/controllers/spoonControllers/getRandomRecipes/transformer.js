@@ -4,16 +4,17 @@
  * @name transformer
  * @param {Promise<Response>} result received result from api.
  * @returns {Promise<Object>} cleaned data of type js object.
- * @throws {Error} error message if there is an error. 
- * @description transform data and make it more cleaner in a specific order. 
+ * @returns {Object} returns object with a message if there is no result
+ * @throws {Error} error message if there is an error.
+ * @description transform data and make it more cleaner in a specific order.
  **/
 const transformer = (result) => {
 	let standardResult = {};
 	try {
 		if (result) {
 			let recipes = [];
-			for (recipe of result.recipes) {
-				singleRecipe = {};
+			for (let recipe of result.recipes) {
+				let singleRecipe = {};
 				if (recipe.vegetarian) {
 					singleRecipe.vegetarian = recipe.vegetarian;
 				}
@@ -80,11 +81,15 @@ const transformer = (result) => {
 			}
 			standardResult.productMatches = productMatches;
 		} else {
-			return { message: 'no result' };
+			return {
+				message: 'no result'
+			};
 		}
 
 		if (standardResult) return standardResult;
-		else return { message: 'no result' };
+		else return {
+			message: 'no result'
+		};
 	} catch (e) {
 		console.log('error occurred in spoon getRandomRecipe transformer', e);
 	}

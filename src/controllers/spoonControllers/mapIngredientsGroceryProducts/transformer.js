@@ -13,7 +13,7 @@ const transformer = (result) => {
 		let standardResult = [];
 
 		if (result) {
-			for (item of result) {
+			for (let item of result) {
 				let singleIngredient = {};
 				//checking which name included in the response
 				if (item.original) {
