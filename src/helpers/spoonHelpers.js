@@ -24,14 +24,13 @@ const getRecipeInfoById = async (id) => {
 	if (id) {
 		try {
 			const response = await getRecipeInfoController(id);
-			const result = response.data;
+			const result = response;
 			return result;
 		} catch (e) {
-			print(`error happen in the `);
+			console.log(`error occurred in the spoonHelpers at getRecipeInfoById()  error: ${error}`);
 			return { message: 'something went wrong' };
 		}
 	} else return { message: 'no body was provided' };
 };
-
 /*----------------------------- Exports Helper Functions -----------------------------*/
 module.exports = { getRecipeInfoById };

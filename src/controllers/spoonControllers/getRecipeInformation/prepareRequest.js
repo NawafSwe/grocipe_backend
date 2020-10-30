@@ -1,5 +1,14 @@
 /*--------------- implementing the end point for spoon api ---------------*/
 /* get Recipe Information endpoint */
+/** @author Nawaf Alsharqi
+ * @exports
+ * @function
+ * @nameprepareRequest
+ * @param {Object} recipe recipe data
+ * @returns {string} formatted url for the endPoint
+ * @throws {Error} throws an error if there is a failure
+ * @description format a valid url for spoon api
+ */
 const prepareRequest = (recipe) => {
 	try {
 		const spoonHost = 'https://api.spoonacular.com/recipes/',

@@ -56,5 +56,4 @@ const postUserRecipe = async (id, recipe) => {
 		console.log(`error happened in the user helpers at postUserRecipe()  error: ${error.message}`);
 	}
 };
-
 module.exports = { formatUserObject, postUserRecipe };

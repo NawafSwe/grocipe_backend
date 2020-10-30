@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 /*---------------------------- creating schema ----------------------------*/
 const recipeSchema = mongoose.Schema({
-	cuisine: { type: String, require: true },
+	cuisine: { type: String, required: true },
 	healthScore: { type: Number },
 	unit: { type: String },
 	ingredients: [],

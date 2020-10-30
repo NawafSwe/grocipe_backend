@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/checkSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/checkSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/prepareRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/prepareRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/guessNutritionByDishNameController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/guessNutritionByDishNameController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/guessNutritionByDishName/transformer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +16,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/groceryItemCotroller.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/utils/checkSchema.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1hXPd7yEAJA9wrA2dclW4M9YlnH" />
   <component name="ProjectViewState">
@@ -24,8 +25,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -55,6 +59,10 @@
       <workItem from="1600350890608" duration="1217000" />
       <workItem from="1602510165978" duration="3422000" />
       <workItem from="1602566773243" duration="622000" />
+      <workItem from="1603606639011" duration="23000" />
+      <workItem from="1603640967137" duration="93000" />
+      <workItem from="1603698307756" duration="9000" />
+      <workItem from="1604097510188" duration="709000" />
     </task>
     <servers />
   </component>
