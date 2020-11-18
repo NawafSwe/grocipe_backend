@@ -47,10 +47,10 @@ authenticationRouter.get('/logout', async (req, res) => {
 		res.json(response).status(400);
 	}
 });
-authenticationRouter.get('/seed', async (req, res) => {
-	await User.deleteMany({});
-	await Recipe.deleteMany({});
-	res.send('done');
-});
+// authenticationRouter.get('/seed', async (req, res) => {
+// 	await User.deleteMany({});
+// 	await Recipe.deleteMany({});
+// 	res.send('done');
+// });
 
 module.exports = authenticationRouter;
