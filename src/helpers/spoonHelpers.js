@@ -8,11 +8,13 @@ const getRecipeInfoController = require('../controllers/spoonControllers/getReci
 /*----------------------------- Helper Functions -----------------------------*/
 
 /** @author Nawaf Alsharqi
+ * @async
  * @function
  * @name getRecipeInfoByIds
  * @param {Object} id is the id of particular recipe
  * @return {Object} returns Object of new response that came from the endpoint 'getRecipeInformationByID'
  * @return {Object} return a message if the body does not exist
+ * @throws {Error} throws an error if there is error.
  * @description  allows us to get benefit from the response returned from the 'searchByIngredients' controller
  * by taking the recipe id from the response then do another request to the endpoint 'getRecipeInformation' to get the recipe information
  */
@@ -22,14 +24,13 @@ const getRecipeInfoById = async (id) => {
 	if (id) {
 		try {
 			const response = await getRecipeInfoController(id);
-			const result = response.data;
+			const result = response;
 			return result;
 		} catch (e) {
-			print(`error happen in the `);
+			console.log(`error occurred in the spoonHelpers at getRecipeInfoById()  error: ${error}`);
 			return { message: 'something went wrong' };
 		}
 	} else return { message: 'no body was provided' };
 };
-
 /*----------------------------- Exports Helper Functions -----------------------------*/
 module.exports = { getRecipeInfoById };

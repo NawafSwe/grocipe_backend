@@ -1,7 +1,16 @@
 /*--------------- implementing the end point for spoon api ---------------*/
 
 /* Autocomplete Recipe Search endpoint */
-
+/** @author Nawaf Alsharqi
+ * @exports
+ * @function
+ * @name prepareRequest
+ * @param {Object} body contains data about the url
+ * @returns {string} url string
+ * @throws {Error} it may throw an error if there is failure during the process.
+ * @description preparing request for the end point autoComplete recipe
+ *
+ */
 const prepareRequest = (body) => {
 	try {
 		const spoonKey = process.env.API_KEY_SPOON || '',

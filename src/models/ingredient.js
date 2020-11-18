@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 /*---------------------------- creating schema ----------------------------*/
 const ingredientSchema = mongoose.Schema({
-	name: { type: String, require: true },
+	name: { type: String, required: true },
 	image: { type: String },
 	originalName: { type: String },
 	amount: { type: Number },
