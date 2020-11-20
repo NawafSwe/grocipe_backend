@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/searchByIngredientsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/searchByIngredientsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchIngredientsById/searchIngredientsByIdController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchIngredientsById/searchIngredientsByIdController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <workItem from="1604106540113" duration="48000" />
       <workItem from="1605019977807" duration="151000" />
       <workItem from="1605033018200" duration="26000" />
-      <workItem from="1605893810640" duration="533000" />
+      <workItem from="1605893810640" duration="1213000" />
     </task>
     <servers />
   </component>

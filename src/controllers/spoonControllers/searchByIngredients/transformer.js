@@ -3,12 +3,14 @@
  * @param {Array} result is an array that holds a response contains json object from spoon api
  * @return {Array} returns cleaned version of an array that holds a response contains json object from spoon api if there is no error
  * @return {Object}  returns a waring message if there is no standard result
- * @return {Error} returns an error if there is an external error
+ * @throws {Error} returns an error if there is an external error
  */
 const transformer = (result) => {
 	try {
 		/*------------------ filtering Result before sending ------------------ */
 		let standardResult = [];
+
+
 		//checking if there is a result
 		if (result) {
 			for (item of result) {
@@ -39,7 +41,7 @@ const transformer = (result) => {
 				if (item.missedIngredientCount) {
 					singleRecipe.missedIngredientCount = item.missedIngredientCount;
 				}
-			// if item has likes
+				// if item has likes
 				if (item.likes) {
 					singleRecipe.likes = item.likes;
 				}
@@ -157,8 +159,8 @@ const transformer = (result) => {
 				}
 				standardResult.push(singleRecipe);
 			}
-		}
 
+		}
 		if (standardResult.length > 0) {
 			return standardResult;
 		} else {
