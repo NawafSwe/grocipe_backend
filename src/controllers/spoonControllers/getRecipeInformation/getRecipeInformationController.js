@@ -13,7 +13,7 @@ const getRecipeInformationRequest = async (recipe) => {
 		const response = await axios.get(request);
 		const result = response.data;
 		const standardResult = transformer(result);
-		return result;
+		return standardResult;
 	} catch (e) {
 		console.log('error occurred in spoon getRecipeInformation controller', e);
 	}

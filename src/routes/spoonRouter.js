@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* ----------------- importing packages and files ---------------- */
+const { getCustomRecipeInfo } = require('../helpers/spoonHelpers');
+
 const express = require('express'),
 	spoonRouter = express.Router(),
 	searchByIngredientsRequest = require('../controllers/spoonControllers/searchByIngredients/searchByIngredientsController'),
@@ -168,6 +170,17 @@ spoonRouter.post('/getRandomRecipe', validate('getRandomRecipe'), async (req, re
 	if (!err.isEmpty()) res.send(err.mapped()).status(400);
 	else {
 		const result = await getRandomRecipeRequest(req.body);
+		res.json(result).status(200);
+	}
+});
+
+
+spoonRouter.post('/recipes', validate('searchByIngredients'), async (req, res) => {
+	const err = validationResult(req);
+	if (!err.isEmpty()) {
+		res.send(err.mapped()).status(400);
+	} else {
+		const result = await getCustomRecipeInfo(req.body);
 		res.json(result).status(200);
 	}
 });

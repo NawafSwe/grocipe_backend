@@ -31,9 +31,9 @@ const transformer = (result) => {
 					singleRecipe.image = item.image;
 				}
 
-				// if (item.imageType) {
-				// 	singleRecipe.imageType = item.imageType;
-				// }
+				if (item.imageType) {
+					singleRecipe.imageType = item.imageType;
+				}
 
 				if (item.usedIngredientCount) {
 					singleRecipe.usedIngredientCount = item.usedIngredientCount;
@@ -171,4 +171,47 @@ const transformer = (result) => {
 	}
 };
 
-module.exports = transformer;
+
+const customResult = async (result) => {
+	try {
+		/*------------------ filtering Result before sending ------------------ */
+		let standardResult = [];
+		//checking if there is a result
+		if (result) {
+			for (item of result) {
+				//holding the recipe
+				let singleRecipe = {};
+
+				/*------------------ CHECKING the keys and getting rid of empty key values ------------------ */
+
+				if (item.id) {
+					singleRecipe.id = item.id;
+				}
+
+				if (item.title) {
+					singleRecipe.title = item.title;
+				}
+
+				if (item.image) {
+					singleRecipe.image = item.image;
+				}
+
+				// if item has likes
+				if (item.likes) {
+					singleRecipe.likes = item.likes;
+				}
+				standardResult.push(singleRecipe);
+			}
+
+		}
+		if (standardResult.length > 0) {
+			return standardResult;
+		} else {
+			return { message: 'no results was find to standardize' };
+		}
+	} catch (e) {
+		console.log('Error occurred in spoon customResult transformer', e);
+	}
+};
+
+module.exports = customResult;
