@@ -8,9 +8,9 @@ searchByIngredientsRequest = async (body) => {
 		const request = prepareRequest(body);
 		const response = await axios.get(request);
 		const result = response.data;
-		const standardResult = transformer(result);
+		//const standardResult = transformer(result);
 
-		return standardResult;
+		return result;
 	} catch (e) {
 		console.log('Error occurred in spoon searchByIngredients controller', e);
 	}

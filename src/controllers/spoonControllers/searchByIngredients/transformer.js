@@ -29,15 +29,19 @@ const transformer = (result) => {
 					singleRecipe.image = item.image;
 				}
 
-				if (item.imageType) {
-					singleRecipe.imageType = item.imageType;
-				}
+				// if (item.imageType) {
+				// 	singleRecipe.imageType = item.imageType;
+				// }
 
 				if (item.usedIngredientCount) {
 					singleRecipe.usedIngredientCount = item.usedIngredientCount;
 				}
 				if (item.missedIngredientCount) {
 					singleRecipe.missedIngredientCount = item.missedIngredientCount;
+				}
+			// if item has likes
+				if (item.likes) {
+					singleRecipe.likes = item.likes;
 				}
 
 				if (item.missedIngredients) {
@@ -148,7 +152,7 @@ const transformer = (result) => {
 							tempIngredient.image = ingredient.image;
 						}
 						singleRecipe.usedIngredients.push(tempIngredient);
-						
+
 					}
 				}
 				standardResult.push(singleRecipe);

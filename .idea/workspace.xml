@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/authenticationRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/authenticationRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/searchByIngredientsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/searchByIngredientsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchIngredientsById/searchIngredientsByIdController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchIngredientsById/searchIngredientsByIdController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +16,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/groceryItemCotroller.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/utils/checkSchema.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/userController.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/utils/checkSchema.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controllers/modelsControllers/groceryItemCotroller.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1hXPd7yEAJA9wrA2dclW4M9YlnH" />
   <component name="ProjectViewState">
@@ -38,7 +40,13 @@
     <configuration default="true" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="nodejs" type="NodeJSConfigurationType">
+    <configuration default="true" type="js.build_tools.npm">
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
   </component>
@@ -65,6 +73,7 @@
       <workItem from="1604106540113" duration="48000" />
       <workItem from="1605019977807" duration="151000" />
       <workItem from="1605033018200" duration="26000" />
+      <workItem from="1605893810640" duration="533000" />
     </task>
     <servers />
   </component>
@@ -72,11 +81,12 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="83" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602519652903">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="184" y="85" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605893895551">
+      <screen x="0" y="25" width="1440" height="802" />
     </state>
     <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.795@0.23.1440.795" timestamp="1600216725494" />
     <state x="184" y="83" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806@0.23.1440.806" timestamp="1602519652903" />
+    <state x="184" y="85" width="1071" height="721" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.802@0.25.1440.802" timestamp="1605893895551" />
     <state x="507" y="133" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1602519553569">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
