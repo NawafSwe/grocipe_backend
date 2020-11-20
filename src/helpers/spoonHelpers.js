@@ -76,7 +76,7 @@ const getCustomRecipeInfo = async (body) => {
 			//fetching additional info about recipe
 			const recipeInfo = await getRecipeInfoController({ recipeId: recipeObj.id });
 			//merging the fetched info
-			recipeObj = { ...recipeInfo };
+			recipeObj = { ...recipeObj, ...recipeInfo };
 			//pushing the recipe to the array
 			recipeArray.push(recipeObj);
 

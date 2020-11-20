@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="887385b8-d9e0-4ec5-8db3-eda1e35bdafe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/getRecipeInformationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/getRecipeInformationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/getRecipeInformation/transformer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/spoonControllers/searchByIngredients/transformer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/spoonHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/spoonHelpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/recipeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/recipeRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/spoonRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/spoonRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <workItem from="1605019977807" duration="151000" />
       <workItem from="1605033018200" duration="26000" />
       <workItem from="1605893810640" duration="1349000" />
-      <workItem from="1605899912901" duration="4376000" />
+      <workItem from="1605899912901" duration="4961000" />
     </task>
     <servers />
   </component>
