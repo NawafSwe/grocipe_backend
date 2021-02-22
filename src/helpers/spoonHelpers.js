@@ -70,7 +70,7 @@ const getCustomRecipeInfo = async (body) => {
 		//for each recipe fetch its info and put it inside a new json object after that return an array of it
 		const briefRecipeInfo = await getRecipes(body);
 
-		for (let recipe of briefRecipeInfo) {
+		for await(let recipe of briefRecipeInfo) {
 			//putting all info about the recipe;
 			let recipeObj = { ...recipe };
 			//fetching additional info about recipe
