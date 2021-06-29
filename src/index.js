@@ -85,5 +85,5 @@ app.use(authenticationRouter);
 const PORT = process.env.PORT || 6666;
 const HOST = process.env.HOST || 'localhost';
 
-app.listen(PORT, HOST);
+app.listen(process.env.PORT || 3023);
 console.log(`Server running on http://${HOST}:${PORT}`);
