@@ -11,9 +11,7 @@ const spoonRouter = require('./routes/spoonRouter'),
 	bodyParser = require('body-parser'),
 	expressValidator = require('express-validator'),
 	mongoose = require('mongoose'),
-	passport = require('passport'),
-	expressSession = require('express-session'),
-	MemoryStore = require('memorystore')(expressSession),
+	// passport = require('passport'),
 	authenticationRouter = require('./routes/authenticationRouter'),
 	cors = require('cors');
 
@@ -54,26 +52,26 @@ app.get('/', (req, res) => {
 
 /* ----------------------- Configuring Passport  -----------------------*/
 
-app.use((req, res, next) => {
-	req.secret = {
-		cookie: { maxAge: 86400000 },
-		resave: true,
-		saveUninitialized: true,
-		store: new MemoryStore({
-			checkPeriod: 86400000 // prune expired entries every 24h
-		}),
-		secret: process.env.SECRET
-	};
-});
+// app.use((req, res, next) => {
+// 	req.secret = {
+// 		cookie: { maxAge: 86400000 },
+// 		resave: true,
+// 		saveUninitialized: true,
+// 		store: new MemoryStore({
+// 			checkPeriod: 86400000 // prune expired entries every 24h
+// 		}),
+// 		secret: process.env.SECRET
+// 	};
+// });
 
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(User.createStrategy());
+// app.use(passport.initialize());
+// app.use(passport.session());
+// passport.use(User.createStrategy());
 
 // /* passport serialize and deserialize are response of reading the data
 // from session decoded and encoded save and delete  */
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 /* -------------- routers ---------------------- */
 app.use('/spoon', spoonRouter);

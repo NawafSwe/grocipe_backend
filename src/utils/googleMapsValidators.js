@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 const { body, param } = require('express-validator/check');
-/** @author Nawaf Alsharqi. 
+/**
  * @function
  * @name validate
  * @param {String} method name of the case to determine which validation we go with.
@@ -46,7 +46,7 @@ const validate = (method) => {
 					}
 					return true;
 				}),
-				body('opennow').optional().isBoolean(),
+				body('opennow').optional().isBoolean()
 			];
 		}
 		case 'searchPlace': {
@@ -58,7 +58,7 @@ const validate = (method) => {
 					'Enter a valid inputtype. This can be one of either textquery or phonenumber'
 				)
 					.exists()
-					.isIn(['textquery', 'phonenumber']),
+					.isIn(['textquery', 'phonenumber'])
 			];
 		}
 		case 'nextPage': {
@@ -97,8 +97,8 @@ const validate = (method) => {
 						'price_level',
 						'rating',
 						'review',
-						'user_ratings_total',
-					]),
+						'user_ratings_total'
+					])
 			];
 		}
 		case 'placePhoto': {
@@ -112,7 +112,7 @@ const validate = (method) => {
 						return true;
 					}
 					return true;
-				}),
+				})
 			];
 		}
 		case 'placeAutocomplete': {
@@ -127,7 +127,7 @@ const validate = (method) => {
 				body('location.*', 'invalid elements of the location [double , double ]')
 					.toFloat()
 					.isFloat(),
-				body('radius', 'Enter a valid radius [Number]').exists().isInt(),
+				body('radius', 'Enter a valid radius [Number]').exists().isInt()
 			];
 		}
 	}
