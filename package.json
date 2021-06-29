@@ -15,13 +15,12 @@
 		"recipes"
 	],
 	"engines": {
-		"node": "10.16.0"
+		"node": "16.3.0"
 	},
 	"author": "Nawaf sharqi",
 	"license": "MIT",
 	"dependencies": {
-		"@googlemaps/google-maps-services-js": "^2.6.1",
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"Babel": "0.0.1",
 		"body-parser": "^1.19.0",
 		"connect-ensure-login": "^0.1.1",
@@ -32,7 +31,7 @@
 		"express": "^4.17.1",
 		"express-custom-error": "^1.8.4",
 		"express-session": "^1.17.1",
-		"express-session-mongo": "^0.1.0",
+		"express-session-mongo": "^0.0.4",
 		"express-validator": "^5.3.1",
 		"has-keys": "^0.1.0",
 		"helmet": "^3.21.2",

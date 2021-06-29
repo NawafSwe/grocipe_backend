@@ -38,12 +38,12 @@ mongoose.connect(
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
-		useFindAndModify: false,
+		useFindAndModify: false
 	},
 	(err, db) => {
 		//testing the connectivity of the DB
 		if (err) console.log('error to connect to the database', err);
-		else console.log('successfully connected to the database', db.name);
+		else console.log('successfully connected to the database', 'grocipeApp');
 	}
 );
 
@@ -54,17 +54,17 @@ app.get('/', (req, res) => {
 
 /* ----------------------- Configuring Passport  -----------------------*/
 
-app.use(
-	expressSession({
+app.use((req, res, next) => {
+	req.secret = {
 		cookie: { maxAge: 86400000 },
 		resave: true,
 		saveUninitialized: true,
 		store: new MemoryStore({
-			checkPeriod: 86400000, // prune expired entries every 24h
+			checkPeriod: 86400000 // prune expired entries every 24h
 		}),
-		secret: process.env.SECRET,
-	})
-);
+		secret: process.env.SECRET
+	};
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
