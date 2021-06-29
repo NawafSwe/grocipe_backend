@@ -14,10 +14,9 @@ const customResult = async (result) => {
 		let standardResult = [];
 		//checking if there is a result
 		if (result) {
-			for (item of result) {
+			for (const item of result) {
 				//holding the recipe
 				let singleRecipe = {};
-
 				/*------------------ CHECKING the keys and getting rid of empty key values ------------------ */
 
 				if (item.id) {
