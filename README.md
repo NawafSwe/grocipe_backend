@@ -20,9 +20,11 @@ I have created simple <a href="https://github.com/NawafSwe/Recipe-Founder">iOS a
 * ``/searchByIngredients`` which is search for recipes by ingredients, it is validated using express validator. To call
   this endpoint you need the following body:
   * ```js
-      {"ingredients":["rice", "apple"], "number": "100"}```
+      {"ingredients":["rice", "apple"], "number": 100} 
+    ```
   *   ```js 
-      {"ingredients":["rice", "apple"], "number": "100" , "limitLicense": "true", "ranking":1, "ignorePantry":true} ``` 
+      {"ingredients":["rice", "apple"], "number": "100" , "limitLicense": "true", "ranking":1, "ignorePantry":true}
+      ``` 
   * Note that keys ``limitLicense, ranking, ignorePantry ``,   are optionals      
   
 * ``/searchIngredientsById/:id`` which will search for recipe by its id and get its details such as image,name,preparation plan and time
