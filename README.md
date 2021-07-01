@@ -23,7 +23,7 @@ I have created simple <a href="https://github.com/NawafSwe/Recipe-Founder">iOS a
       {"ingredients":["rice", "apple"], "number": "100"}```
   *   ```js 
       {"ingredients":["rice", "apple"], "number": "100" , "limitLicense": "true", "ranking":1, "ignorePantry":true} ``` 
-  * Note that keys ``limitLicense, ranking, ignorePantry `` are optionals      
+  * Note that keys ``limitLicense, ranking, ignorePantry ``,   are optionals      
   
 * ``/searchIngredientsById/:id`` which will search for recipe by its id and get its details such as image,name,preparation plan and time
     this end point only takes query, ``/searchIngredientsById/123`` in that case the id is 123
