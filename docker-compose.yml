@@ -1,0 +1,36 @@
+version: 3.8
+# our containers <services> 
+services: 
+  app:
+    image: node:15-alpine
+    command: npm install && npm run start
+    ports:
+      - 6060:6060
+    working_dir: /usr/src/app
+    volumes: 
+      - ./:/app
+    environment:
+      - PORT=6060
+      - HOST=127.0.0.1
+      - MONGO_URI=//localhost:27017/grocipe
+    networks:
+      - grocipe-net 
+
+
+  mongodb: 
+    image: mongo
+    volumes: 
+      - grocipeApp/var/lib/mongo
+    ports:
+      -2217:2217
+
+  volumes: 
+    - grocipeApp/var/lib/mongo
+  networks:
+    - grocipe-net  
+
+  networks:
+    grocipe-net:
+      driver: bridge
+
+    
