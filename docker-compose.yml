@@ -23,12 +23,11 @@ services:
       - grocipeApp/var/lib/mongo
     ports:
       -2217:2217
+    networks:
+     - grocipe-net  
 
   volumes: 
-    - grocipeApp/var/lib/mongo
-  networks:
-    - grocipe-net  
-
+    - grocipeApp/var/lib/mongo  
   networks:
     grocipe-net:
       driver: bridge
