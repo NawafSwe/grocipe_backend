@@ -13,7 +13,7 @@ services:
     environment:
       - PORT=6060
       - HOST=127.0.0.1
-      - MONGO_URI=//localhost:27017/grocipe
+      - MONGO_URI=localhost:27017/grocipe
     networks:
       - grocipe-net 
 
