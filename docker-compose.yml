@@ -22,7 +22,7 @@ services:
     volumes: 
       - grocipeApp:/var/lib/mongo
     ports:
-      -2217:2217
+      - 2217:2217
     networks:
      - grocipe-net   
 
