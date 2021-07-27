@@ -20,7 +20,7 @@ services:
   mongodb: 
     image: mongo
     volumes: 
-      - grocipeApp/var/lib/mongo
+      - grocipeApp:/var/lib/mongo
     ports:
       -2217:2217
     networks:
@@ -31,6 +31,6 @@ networks:
    driver: bridge
 
 volumes: 
-   grocipeApp/var/lib/mongo 
+  grocipeApp:
 
     
