@@ -31,6 +31,6 @@ networks:
    driver: bridge
 
 volumes: 
-  - grocipeApp/var/lib/mongo 
+   grocipeApp/var/lib/mongo 
 
     
