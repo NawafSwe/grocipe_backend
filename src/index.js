@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'staging' || process.env.NODE_ENV === 'production')
 const app = express();
 app.use(cors());
 app.use(expressValidator());
-app.use(bodyParser.json());
+app.use(express.json());
 
 /*----------------- Establishing Connection to DB -----------------*/
 const MONGO_URI = process.env.MONGO_URI;
@@ -46,7 +46,7 @@ mongoose.connect(
 );
 
 /* -------------- checking backend health ---------------------- */
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
 	res.json({ welcome: 'Hello World' }).status(200);
 });
 
@@ -85,5 +85,5 @@ app.use(authenticationRouter);
 const PORT = process.env.PORT || 6666;
 const HOST = process.env.HOST || 'localhost';
 
-app.listen(process.env.PORT || 3023);
-console.log(`Server running on http://${HOST}:${PORT}`);
+app.listen(PORT, () => console.log(`Server running on http://${HOST}:${PORT}`) );
+
