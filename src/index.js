@@ -13,7 +13,7 @@ const spoonRouter = require('./routes/spoonRouter'),
 	// passport = require('passport'),
 	authenticationRouter = require('./routes/authenticationRouter'),
 	cors = require('cors');
-	const helmet = require('helmet')
+	const helmet = require('helmet');
 
 /* -------------- choosing Env ---------------------- */
 if (process.env.NODE_ENV === 'staging' || process.env.NODE_ENV === 'production') {
@@ -26,6 +26,7 @@ if (process.env.NODE_ENV === 'staging' || process.env.NODE_ENV === 'production')
 const app = express();
 app.use(cors());
 app.use(expressValidator());
+app.use(helmet());
 app.use(express.json());
 
 /*----------------- Establishing Connection to DB -----------------*/
