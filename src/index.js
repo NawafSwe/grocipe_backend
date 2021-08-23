@@ -8,12 +8,12 @@ const spoonRouter = require('./routes/spoonRouter'),
 	recipeRouter = require('./routes/recipeRouter'),
 	groceryRouter = require('./routes/groceryItemRouter'),
 	express = require('express'),
-	bodyParser = require('body-parser'),
 	expressValidator = require('express-validator'),
 	mongoose = require('mongoose'),
 	// passport = require('passport'),
 	authenticationRouter = require('./routes/authenticationRouter'),
 	cors = require('cors');
+	const helmet = require('helmet')
 
 /* -------------- choosing Env ---------------------- */
 if (process.env.NODE_ENV === 'staging' || process.env.NODE_ENV === 'production') {
