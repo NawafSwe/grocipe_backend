@@ -47,8 +47,8 @@ mongoose.connect(
 );
 
 /* -------------- checking backend health ---------------------- */
-app.get('/', (_, res) => {
-	res.json({ welcome: 'Hello World' }).status(200);
+app.get('/health', (_, res) => {
+	res.status(200).json({ welcome: 'server alive' });
 });
 
 /* ----------------------- Configuring Passport  -----------------------*/
