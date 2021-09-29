@@ -36,8 +36,6 @@ mongoose.connect(
 	{
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		useCreateIndex: true,
-		useFindAndModify: false
 	},
 	(err, db) => {
 		//testing the connectivity of the DB
