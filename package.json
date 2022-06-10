@@ -20,7 +20,7 @@
 	"author": "Nawaf sharqi",
 	"license": "MIT",
 	"dependencies": {
-		"axios": "^0.26.0",
+		"axios": "^0.27.2",
 		"Babel": "0.0.1",
 		"body-parser": "^1.19.0",
 		"connect-ensure-login": "^0.1.1",
